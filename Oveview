@@ -1,9 +1,11 @@
 Product Requirements:
 
-Users can upload passport picture - data is extracted
+Users can upload a passport picture - 
+Photo is sent to external API where Data is extracted
+Data that is extracted shows on frontend 
+
 Users can have file size of picture compressed
-Data that is extracted saved onto a form
-Input more fields onto a form
+Userss can input more fields onto a form
 
 Stretch Goal: Chrome Extension -
 Form Data can autofill
@@ -11,10 +13,8 @@ Form Data can autofill
 App ->
         Create Account
         Upload Photo (extract data) -> API to Mindee -> Return Data 
-        Upload photo -> Compress File Size -> Download Filse Size
+        Upload photo -> Compresss File Size -> Download Filse Size
         Submit Additional Form Data
 
 Log In / Log Out
 
-
-774084579159
