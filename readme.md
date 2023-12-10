@@ -1,11 +1,17 @@
 Product Requirements:
 
-Users can upload a passport picture - 
-Photo is sent to external API where Data is extracted
-Data that is extracted shows on frontend 
+Users upload a passport picture - 
+        a. Save the filepath
+        b. Send the filepath to external API (for photo compression)
+        c. Send the filepath to external API (for data extraction)
+        d. Receive compressed photo
+                i. User has option to download compressed photo
+        e. Receive passport data extraction response 
+                i. Save the response to our DB
+                ii. Show the reponse to the User
 
-Users can have file size of picture compressed
-Userss can input more fields onto a form
+
+Users can input more fields onto a form
 
 Stretch Goal: Chrome Extension -
 Form Data can autofill
@@ -17,4 +23,3 @@ App ->
         Submit Additional Form Data
 
 Log In / Log Out
-
