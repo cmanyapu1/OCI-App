@@ -12,7 +12,7 @@ Form Data can autofill
 
 App ->
         Create Account
-        Upload Photo (extract data) -> API to Mindee -> Return Data 
+        Upload Photo (extract data) -> API to AWS -> Return Data 
         Upload photo -> Compresss File Size -> Download Filse Size
         Submit Additional Form Data
 

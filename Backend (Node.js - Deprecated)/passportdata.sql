@@ -22,7 +22,7 @@ CREATE TABLE miscforminfo (
         REFERENCES users ON DELETE CASCADE
 
 )
-CREATE TABLE imagecompression (
+CREATE TABLE uploadedphoto (
     id INTEGER
         REFERENCES users ON DELETE CASCADE
     imagename TEXT   

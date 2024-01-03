@@ -7,13 +7,15 @@ const jsonschema = require("jsonschema");
 const express = require("express");
 const { BadRequestError } = require("../expressError");
 const Passport = require("../models/passport");
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' });
+
+
 //const jobNewSchema = require("../schemas/jobNew.json");
 //const jobUpdateSchema = require("../schemas/jobUpdate.json");
 //const jobSearchSchema = require("../schemas/jobSearch.json");
 
 const router = express.Router({ mergeParams: true });
-
-
 
 
 router.post("/", async function (req, res, next) {
@@ -77,6 +79,14 @@ router.delete("/:passportnum", async function (req, res, next) {
     return next(err);
   }
 });
+
+
+router.post('/upload', upload.single('photo'), (req, res) => {
+  // Process the uploaded file (e.g., save to database, send to external API)
+  // Return a response to the client
+});
+
+
 
 
 module.exports = router;

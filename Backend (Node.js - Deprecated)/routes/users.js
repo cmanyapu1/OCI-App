@@ -5,21 +5,16 @@
 const jsonschema = require("jsonschema");
 
 const express = require("express");
-const { ensureCorrectUserOrAdmin, ensureAdmin } = require("../auth");
+const { ensureCorrectUserOrAdmin, ensureAdmin } = require("../middleware/auth");
 const { BadRequestError } = require("../expressError");
 const User = require("../models/users");
 const Passport = require("../models/passport");
 
-const { createToken } = require("../tokens");
+const { createToken } = require("../helpers/tokens");
 //const userNewSchema = require("../schemas/userNew.json");
 //const userUpdateSchema = require("../schemas/userUpdate.json");
 
 const router = express.Router();
-
-
-
-
-
 
 /** GET /[username] => { user }
  *
