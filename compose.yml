@@ -1,0 +1,10 @@
+services:
+
+  backend:
+    build: 
+      context: Backend
+      dockerfile: Backend.Dockerfile
+    volumes:
+      - ./Backend:/Backend
+
+  
