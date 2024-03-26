@@ -7,8 +7,6 @@ Data that is extracted shows on frontend
 Users can have file size of picture compressed
 Userss can input more fields onto a form
 
-Stretch Goal: Chrome Extension -
-Form Data can autofill
 
 App ->
         Create Account
@@ -18,3 +16,5 @@ App ->
 
 Log In / Log Out
 
+Stretch Goal: Chrome Extension -
+Form Data can autofill
