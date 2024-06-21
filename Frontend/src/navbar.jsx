@@ -1,8 +1,6 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-import UserContext from "../auth/UserContext";
-import "./Navigation.css";
-import { NavLink } from "react-router-dom";
+import UserContext from "./usercontext";
 import { Navbar, Nav, NavItem } from "reactstrap";
 
 function NavBar({ logout }) { //what does logout here do

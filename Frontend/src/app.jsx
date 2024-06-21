@@ -3,9 +3,11 @@ import { BrowserRouter } from "react-router-dom";
 import useLocalStorage from "./hooks/useLocalStorage";
 import NavBar from "./navbar";
 import Routes from "./routes";
-import InternalApi from "./api";
+import InternalApi from "../api";
 import UserContext from "./usercontext";
+console.log('import jwt')
 import jwt from "jsonwebtoken";
+console.log('after the import')
 
 export const TOKEN_STORAGE_ID = "jobly-token";
 
@@ -29,7 +31,9 @@ function App() {
         async function getCurrentUser() {
           if (token) {
             try {
+              console.log("befor jwt decode");
               let { username } = jwt.decode(token);
+              console.log("after jwt decode");
               // put the token on the Api class so it can use it to call the API.
               InternalApi.token = token;
               let currentUser = await InternalApi.getCurrentUser(username);

@@ -2,7 +2,12 @@
 
 import axios from "axios";
 
-const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
+// if(!!process && !!process.env) {
+//   let BASE_URL = process.env.REACT_APP_BASE_URL 
+// } else {
+let BASE_URL =  "http://localhost:3001";
+// }
+
 
 /** API Class.
  *
@@ -78,11 +83,9 @@ class InternalApi {
 
 }
 
-class mindeeAPI {
-    
+//class OCRAPI {}
 
-}
 
-export default IDApi;
+export default InternalApi;
 
 //upload image - change the state - send to API - receive data

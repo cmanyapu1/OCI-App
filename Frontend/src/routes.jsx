@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { Switch, Route, Redirect, BrowserRouter } from "react-router-dom";
-import home from "../home";
-import LoginForm from "../loginform";
-import Profileform from "../profile";
-import SignupForm from "../SignupForm";
+import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
+import home from "./home";
+import LoginForm from "./login";
+// import Profileform from "./profile";
+import SignupForm from "./signup";
 import PrivateRoute from "./privateroute";
 
-function Routes({login, signup}) { 
+function RoutesR({login, signup}) { 
   console.debug(
     "Routes",
     `login=${typeof login}`,
     `register=${typeof register}`,
 );
     return (
-        <Switch>
+        <Routes>
         <Route exact path="/" >
           <home/>
         </Route>
@@ -32,14 +32,14 @@ function Routes({login, signup}) {
         <Route exact path="/signup" >
         <SignupForm signup={signup} />
         </Route>
-        <PrivateRoute exact path="/profile" >
+        {/* <PrivateRoute exact path="/profile" >
         <ProfileForm />
-        </PrivateRoute>
-        <Redirect to="/" />
+        </PrivateRoute> */}
+        <Navigate to="/" />
 
-      </Switch>
+      </Routes>
     )
 }
 
 
-export default Routes;
+export default RoutesR;

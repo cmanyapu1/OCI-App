@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
-import Alert from "../common/Alert";
-import InternalApi from "../api/api";
-import UserContext from "../auth/UserContext";
+import Alert from "./alert";
+import InternalApi from "../api";
+import UserContext from "./usercontext";
 
 function LoginForm({ login }) {
-    const history = useHistory();
+    const history = useNavigate();
     const [formData, setFormData] = useState({
       email: "",
       password: "",

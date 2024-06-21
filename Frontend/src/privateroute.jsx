@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { Route, Redirect } from "react-router-dom";
-import UserContext from "../auth/UserContext";
+import { Route, Navigate } from "react-router-dom";
+import UserContext from "./usercontext";
 
 /** "Higher-Order Component" for private routes.
  *
@@ -20,7 +20,7 @@ function PrivateRoute({ exact, path, children }) {
   );
 
   if (!currentUser) {
-    return <Redirect to="/login" />;
+    return <Navigate to="/login" />;
   }
 
   return (
