@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function App() {
+function Uploadpic() {
   const [file, setFile] = useState(null);
 
   const handleFileChange = (e) => {
@@ -26,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+export default Uploadpic;

@@ -27,7 +27,7 @@ function SignupForm({ signup }) {
       evt.preventDefault();
       let result = await signup(formData); //what is signup here
       if (result.success) {
-        history.push("/companies");
+        history.push("/Passport/list");
       } else {
         setFormErrors(result.errors);
       }

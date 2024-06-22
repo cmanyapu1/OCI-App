@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import UserContext from "./usercontext";
 
 
-function Home() {
+function Homes() {
   const { currentuser } = useContext(UserContext);
 
   return (
@@ -27,4 +27,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Homes;

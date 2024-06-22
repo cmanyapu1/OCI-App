@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { Navigate, Link } from 'react-router-dom'; // Import Redirect and Link
 
-import { Link, Navigate } from "react-router-dom";
 
 
 function PassportCard({name, description, logoUrl, handle}) { //name, description, logoUrl, handle
-    if (!company) return <Navigate to="/"/>
+    if (!passport) return <Navigate to="/"/>
 
   return (
-    <Link to={`"/companies/${handle}"`}>
+    <Link to={`"/passport/${handle}"`}>
   <div>
       <h1>{name} </h1>
       <p>{description}</p>
