@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
 import Homes from "./home";
 import LoginForm from "./login";
@@ -16,28 +16,43 @@ function RoutesR({login, signup, homes}) {
     `register=${typeof register}`,
 );
     return (
+      <BrowserRouter>
         <Routes>
-        <Route exact path="/home" >
-          <Homes homes={homes}/>
-        </Route>
-        <PrivateRoute exact path="/Passport/list" >
-          <Passportlist/> 
-        </PrivateRoute>
-        <PrivateRoute exact path="/Passport/paassportcard">
+        <Route  path="/home" 
+          element={<Homes homes={homes}/>}
+        />
+        <Route
+         path="/Passport/list" 
+          element={ 
+          <PrivateRoute> 
+            <Passportlist/>
+          </PrivateRoute>
+          }
+          />
+             <Route
+         path="/Passport/paassportcard" 
+          element={ 
+          <PrivateRoute> 
             <PassportCard />
           </PrivateRoute>
-        <PrivateRoute exact path="/Passport/upload" >
+          }
+          />
+                <Route
+         path="/Passport/upload" 
+          element={ 
+          <PrivateRoute> 
         <Uploadpic />
-        </PrivateRoute>
-        <Route exact path="/login" >
-        <LoginForm login={login} />
-        </Route>
-        <Route exact path="/signup" >
-        <SignupForm signup={signup} />
-        </Route>
-        <Navigate to="/" />
+          </PrivateRoute>
+          }
+          />
+       
+       <Route path="/login" element={<LoginForm login={login} />} />
+        <Route path="/signup" element={<SignupForm signup={signup} />} />
+        
+        <Route path="*" element={<Navigate to="/home" />} />
 
       </Routes>
+      </BrowserRouter>
     )
 }
 
