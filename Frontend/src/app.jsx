@@ -88,7 +88,7 @@ function App() {
         setUploads(new Set([...setUploads, id]));
       }
       return (
-        // <BrowserRouter>
+        <BrowserRouter>
           <UserContext.Provider
               value={{ currentUser, setCurrentUser, hasUploadedpassport, uploadpassport }}>
             <div className="App">
@@ -96,7 +96,7 @@ function App() {
               <RoutesR login={login} signup={signup} />
             </div>
           </UserContext.Provider>
-        // </BrowserRouter>
+        </BrowserRouter>
     );
     } 
 

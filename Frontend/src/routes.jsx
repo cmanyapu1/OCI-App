@@ -16,7 +16,6 @@ function RoutesR({login, signup, homes}) {
     `register=${typeof register}`,
 );
     return (
-      <BrowserRouter>
         <Routes>
         <Route  path="/home" 
           element={<Homes homes={homes}/>}
@@ -52,7 +51,6 @@ function RoutesR({login, signup, homes}) {
         <Route path="*" element={<Navigate to="/home" />} />
 
       </Routes>
-      </BrowserRouter>
     )
 }
 
