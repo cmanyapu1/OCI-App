@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
 import useLocalStorage from "./hooks/useLocalStorage";
 import NavBar from "./navbar";
-import Routes from "./routes";
+import RoutesR from "./routes";
 import InternalApi from "../api";
 import UserContext from "./usercontext";
 console.log('import jwt')
@@ -88,15 +88,15 @@ function App() {
         setUploads(new Set([...setUploads, id]));
       }
       return (
-        <BrowserRouter>
+        // <BrowserRouter>
           <UserContext.Provider
               value={{ currentUser, setCurrentUser, hasUploadedpassport, uploadpassport }}>
             <div className="App">
               <NavBar logout={logout} />
-              <Routes login={login} signup={signup} />
+              <RoutesR login={login} signup={signup} />
             </div>
           </UserContext.Provider>
-        </BrowserRouter>
+        // </BrowserRouter>
     );
     } 
 
