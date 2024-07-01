@@ -64,7 +64,7 @@ return (
     <nav >
       {/* <Link className="navbar-brand" to="/"> */}
       <Link to=".">
-        Upload
+        Home
       </Link>
       {currentUser ? loggedInNav() : loggedOutNav()}
     </nav>
