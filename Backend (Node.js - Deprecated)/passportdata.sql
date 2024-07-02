@@ -1,6 +1,6 @@
 CREATE TABLE users (
     id SERIAL PRIMARY KEY
-    email TEXT NOT NULL,
+    email TEXT NOT NULL UNIQUE,
     password TEXT NOT NULL
   
 )
@@ -14,7 +14,6 @@ CREATE TABLE passportinfo (
     dob date,
     doi date,
     doe date
-
 )
 
 CREATE TABLE miscforminfo (

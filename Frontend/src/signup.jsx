@@ -50,6 +50,7 @@ function SignupForm({ signup }) {
                   <div className="form-group">
                     <label>email</label>
                     <input
+                        type='email'
                         name="username"
                         className="form-control"
                         value={formData.email}
