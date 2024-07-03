@@ -47,7 +47,7 @@ function LoginForm({ login }) {
                   <div className="form-group">
                     <label>Username</label>
                     <input
-                        name="username"
+                        name="email"
                         className="form-control"
                         value={formData.username}
                         onChange={handleChange}
