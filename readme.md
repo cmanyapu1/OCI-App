@@ -23,3 +23,21 @@ App ->
         Submit Additional Form Data
 
 Log In / Log Out
+
+
+ 1. Log in / Signup Page
+
+ 2. Home
+-List of Passports 
+Upload new passport
+
+3. Passport Details
+- Passport Picture
+- Extracted Text
+
+4. Upload Passport Form
+- Submit form
+- Loading bar / page
+-> Passport Details
+
+

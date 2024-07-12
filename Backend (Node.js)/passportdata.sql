@@ -1,29 +1,27 @@
 CREATE TABLE users (
-    id SERIAL PRIMARY KEY
+    id SERIAL PRIMARY KEY,
     email TEXT NOT NULL UNIQUE,
     password TEXT NOT NULL
   
-)
+);
 
 CREATE TABLE passportinfo (
-    id INTEGER
-    REFERENCES users ON DELETE CASCADE
+    id INTEGER REFERENCES users ON DELETE CASCADE,
     passportnum Integer Primary Key,
     surname Text,
     first_name Text,
     dob date,
     doi date,
     doe date
-)
+);
 
 CREATE TABLE miscforminfo (
     id INTEGER
         REFERENCES users ON DELETE CASCADE
-
-)
+);
 CREATE TABLE uploadedphoto (
     id INTEGER
-        REFERENCES users ON DELETE CASCADE
+        REFERENCES users ON DELETE CASCADE,
     imagename TEXT   
-)
+);
 

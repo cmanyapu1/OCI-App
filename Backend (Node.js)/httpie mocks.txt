@@ -1,0 +1,5 @@
+http localhost:3001/auth/register username=tiago password=whatever firstName=Tiago lastName=Fassoni email=a@a.com
+
+ "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzIwMTAzNzIzfQ.0S8_SdjFg9kEmkufjpAW0dLUU1mo-HglODklOOttzCU"
+
+ http localhost:3001/auth/token email=a@a.com password=whatever  

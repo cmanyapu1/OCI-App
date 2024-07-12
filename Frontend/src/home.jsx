@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import UserContext from "./usercontext";
-
+import { Link, NavLink } from "react-router-dom";
+import Passportlist from './list'
 
 function Homes() {
   const { currentuser } = useContext(UserContext);
@@ -9,10 +9,17 @@ function Homes() {
   return (
     <div className="Homepage">
 
-      <p>OCI App</p>
-      <p>Upload your passport here</p>
+      <h1>OCI Application Assistant</h1>
       {currentuser ? (
-      <p> Welcome back {currentuser.email}</p>
+        <>
+      <h2> Welcome back {currentuser.email}</h2>
+      <Link to="/upload">
+      <button>Upload new ID</button>
+      </Link>
+   
+      <p>Passport List</p>
+      <Passportlist user = {currentuser}/>
+       </>
        ) : ( 
       <p>
         <Link to="/login">
@@ -28,3 +35,7 @@ function Homes() {
 }
 
 export default Homes;
+
+
+
+

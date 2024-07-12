@@ -6,8 +6,9 @@ import LoginForm from "./login";
 import SignupForm from "./signup";
 import PrivateRoute from "./privateroute";
 import Passportlist from "./Passport/list";
-import PassportCard from "./Passport/paassportcard";
+import PassportCard from "./Passport/passportcard";
 import Uploadpic from "./Passport/upload";
+import Uploadfirm from  "./Passport/passportform";
 
 function RoutesR({login, signup, homes}) { 
   console.debug(
@@ -17,19 +18,11 @@ function RoutesR({login, signup, homes}) {
 );
     return (
         <Routes>
-        <Route  path="/home" 
+        <Route  path="/" 
           element={<Homes homes={homes}/>}
         />
-        <Route
-         path="/Passport/list" 
-          element={ 
-          <PrivateRoute> 
-            <Passportlist/>
-          </PrivateRoute>
-          }
-          />
              <Route
-         path="/Passport/paassportcard" 
+         path="/Passport/:id" 
           element={ 
           <PrivateRoute> 
             <PassportCard />
@@ -37,10 +30,18 @@ function RoutesR({login, signup, homes}) {
           }
           />
                 <Route
-         path="/Passport/upload" 
+         path="/Upload" 
           element={ 
           <PrivateRoute> 
         <Uploadpic />
+          </PrivateRoute>
+          }
+          />
+                        <Route
+         path="/UploadForm" 
+          element={ 
+          <PrivateRoute> 
+        <UploadForm />
           </PrivateRoute>
           }
           />
@@ -48,7 +49,7 @@ function RoutesR({login, signup, homes}) {
        <Route path="/login" element={<LoginForm login={login} />} />
         <Route path="/signup" element={<SignupForm signup={signup} />} />
         
-        <Route path="*" element={<Navigate to="/home" />} />
+        <Route path="*" element={<Navigate to="/" />} />
 
       </Routes>
     )

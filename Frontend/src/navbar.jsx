@@ -63,7 +63,7 @@ return (
     // <nav className="Navigation navbar navbar-expand-md">
     <nav >
       {/* <Link className="navbar-brand" to="/"> */}
-      <Link to=".">
+      <Link to="/">
         Home
       </Link>
       {currentUser ? loggedInNav() : loggedOutNav()}

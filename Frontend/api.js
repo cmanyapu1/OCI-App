@@ -27,7 +27,7 @@ class InternalApi {
     //there are multiple ways to pass an authorization token, this is how you pass it in the header.
     //this has been provided to show you another way to pass the token. you are only expected to read this code for this project.
     const url = `${BASE_URL}/${endpoint}`;
-    const headers = { Authorization: `Bearer ${IDApiIDApi.token}` };
+    const headers = { Authorization: `Bearer ${InternalApi.token}` }; //ToDO: Where to import IDapi
     const params = (method === "get")
         ? data
         : {};
@@ -68,6 +68,7 @@ class InternalApi {
   }
 
   static async login(data) {
+    console.log('function log in')
     let res = await this.request(`auth/token`, data, "post");
     return res.token;
   }
@@ -75,6 +76,7 @@ class InternalApi {
   /** Signup for site. */
 
   static async signup(data) {
+    console.log('function sign up')
     let res = await this.request(`auth/register`, data, "post");
     return res.token;
   }

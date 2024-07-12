@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import PassportCard from "./paassportcard"
+import PassportCard from "./passportcard"
 import InternalApi from "../../api";
+import { Link } from "react-router-dom";
 
 
-function Passportlist() {
+
+function Passportlist(user) {
   const [passports, setPassport] = useState(null);
 
 
-  async function search(name) {
-    let passports = await InternalApi.getPassports(name);
+  async function search(user) {
+    let passports = await InternalApi.getPassports(user);
     setPassport(passports);
   }
 

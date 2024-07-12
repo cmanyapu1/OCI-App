@@ -25,6 +25,7 @@ function SignupForm({ signup }) {
   
     async function handleSubmit(evt) {
       evt.preventDefault();
+      console.log('inside login component\'s handleSubmit')
       let result = await signup(formData); //what is signup here
       if (result.success) {
         history.push("/Passport/list");
@@ -51,7 +52,7 @@ function SignupForm({ signup }) {
                     <label>email</label>
                     <input
                         type='email'
-                        name="username"
+                        name="email"
                         className="form-control"
                         value={formData.email}
                         onChange={handleChange}

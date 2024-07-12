@@ -3,16 +3,21 @@
   "$id": "http://example.com/userAuth.json",
   "type": "object",
   "properties": {
-    "username": {
-      "type": "string"
-    },
-    "password": {
-      "type": "string"
-    }
+  "password": {
+    "type": "string",
+    "minLength": 5,
+    "maxLength": 200
+  },
+  "email": {
+    "type": "string",
+    "minLength": 6,
+    "maxLength": 60,
+    "format": "email"
+  }
   },
   "additionalProperties": false,
   "required": [
-    "username",
+    "email",
     "password"
   ]
 }

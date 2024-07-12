@@ -19,6 +19,7 @@ const router = express.Router({ mergeParams: true });
 
 
 router.post("/", async function (req, res, next) {
+  // TODO include user info in the insertion
   try {
     
     const passport = await Passport.insert(req.body);
@@ -40,6 +41,10 @@ router.post("/", async function (req, res, next) {
  */
 
 router.get("/", async function (req, res, next) {
+  // TODO ask for username
+  // TODO filter by username
+  
+  return "this function needs more work"
   const q = req.query;
   // arrive as strings from querystring, but we want as int/bool
 
