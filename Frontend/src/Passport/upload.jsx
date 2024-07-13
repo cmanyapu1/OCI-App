@@ -26,9 +26,9 @@ function Uploadpic() {
   } else {
     setPreview(null);
   }
-};
 
-const extractText = async () => {
+
+const extractAndNavigate = async () => {
   if (!file) {
     setError('Please select an image file.');
     return;
@@ -39,40 +39,11 @@ const extractText = async () => {
 
   try {
     const result = await Tesseract.recognize(file, 'eng');
-    setExtractedText(result.data.text);
+    const extractedText = result.data.text;
+    navigate('/uploadform', { state: { extractedText, imagePreview: preview } });
   } catch (err) {
     setError('Text extraction failed. Please try again.');
     console.error('Extraction error:', err);
-  } finally {
-    setLoading(false);
-  }
-};
-
-const handleUpload = async () => {
-  if (!file) {
-    setError('Please select a file to upload.');
-    return;
-  }
-
-  setLoading(true);
-  setError(null);
-
-  const formData = new FormData();
-  formData.append('photo', file);
-  formData.append('extractedText', extractedText);
-
-  try {
-    const response = await axios.post('/upload', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    });
-
-    console.log('Upload successful:', response.data);
-    navigate('/uploadform');
-  } catch (err) {
-    setError('Upload failed. Please try again.');
-    console.error('Upload error:', err);
   } finally {
     setLoading(false);
   }
@@ -92,24 +63,14 @@ return (
     
     {error && <p style={{ color: 'red' }}>{error}</p>}
     
-    <button onClick={extractText} disabled={loading || !file}>
-      Extract Text
+    <button onClick={extractAndNavigate} disabled={loading || !file}>
+      {loading ? 'Extracting...' : 'Extract Text and Edit'}
     </button>
     
-    <button onClick={handleUpload} disabled={loading || !file}>
-      {loading ? 'Uploading...' : 'Upload'}
-    </button>
-    
-    {loading && <p>Processing, please wait...</p>}
-
-    {extractedText && (
-      <div>
-        <h3>Extracted Text:</h3>
-        <pre>{extractedText}</pre>
-      </div>
-    )}
+    {loading && <p>Extracting text, please wait...</p>}
   </div>
 );
+}
 
-
+    
 export default Uploadpic;

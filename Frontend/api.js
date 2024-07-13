@@ -43,19 +43,21 @@ class InternalApi {
 
   // Individual API routes
 
-  /** Get details on a company by handle. */
 
+  //has to be changed by user
   static async getPassport(passportnum) {
     let res = await this.request(`/${passportnum}`);
     return res;
   }
   
-  // obviously, you'll add a lot here ...
+
+    //has to be changed by user
 
   static async getPassports() {
     let res = await this.request(`passport`, { passportnum });
     return res;
   }
+  //has to be changed by user
 
   static async savePasssport(data) {
     let res = await this.request(`/`, data, "post");

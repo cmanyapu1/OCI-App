@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 // import Alert from "../common/Alert";
+import InternalApi from "../api";
 
 
 function SignupForm({ signup }) {
@@ -28,7 +29,7 @@ function SignupForm({ signup }) {
       console.log('inside login component\'s handleSubmit')
       let result = await signup(formData); //what is signup here
       if (result.success) {
-        history.push("/Passport/list");
+        history.push("/");
       } else {
         setFormErrors(result.errors);
       }

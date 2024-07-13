@@ -8,7 +8,7 @@ import PrivateRoute from "./privateroute";
 import Passportlist from "./Passport/list";
 import PassportCard from "./Passport/passportcard";
 import Uploadpic from "./Passport/upload";
-import Uploadfirm from  "./Passport/passportform";
+import Uploadform from  "./Passport/passportform";
 
 function RoutesR({login, signup, homes}) { 
   console.debug(
@@ -41,7 +41,7 @@ function RoutesR({login, signup, homes}) {
          path="/UploadForm" 
           element={ 
           <PrivateRoute> 
-        <UploadForm />
+        <Uploadform />
           </PrivateRoute>
           }
           />

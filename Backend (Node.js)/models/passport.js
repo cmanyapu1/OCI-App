@@ -54,6 +54,7 @@ class Passport {
               doe
                FROM passportinfo
                ORDER BY passportnum`,
+               //where user =
         );
       
         return result.rows;

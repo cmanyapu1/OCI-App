@@ -6,7 +6,8 @@ CREATE TABLE users (
 );
 
 CREATE TABLE passportinfo (
-    id INTEGER REFERENCES users ON DELETE CASCADE,
+    id INTEGER REFERENCES users ON DELETE CASCADE, /* we want store passport per user -> does this work
+*/
     passportnum Integer Primary Key,
     surname Text,
     first_name Text,
@@ -14,6 +15,7 @@ CREATE TABLE passportinfo (
     doi date,
     doe date
 );
+
 
 CREATE TABLE miscforminfo (
     id INTEGER

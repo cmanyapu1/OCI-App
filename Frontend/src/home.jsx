@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import UserContext from "./usercontext";
 import { Link, NavLink } from "react-router-dom";
-import Passportlist from './list'
+import Passportlist from './Passport/list'
 
 function Homes() {
   const { currentuser } = useContext(UserContext);
