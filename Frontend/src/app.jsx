@@ -31,12 +31,14 @@ function App() {
         async function getCurrentUser() {
           if (token) {
             try {
-              console.log("befor jwt decode");
+              console.log(token);
               let { username } = jwt.decode(token);
-              console.log("after jwt decode");
+              console.log("after jwt decode. Token is " + username);
               // put the token on the Api class so it can use it to call the API.
               InternalApi.token = token;
+              console.log('before getCurrentUser')
               let currentUser = await InternalApi.getCurrentUser(username);
+              console.log('after getCurrentUser')
               setCurrentUser(currentUser);
               setUploads(new Set(currentUser.passportinfo));
             } catch (err) {

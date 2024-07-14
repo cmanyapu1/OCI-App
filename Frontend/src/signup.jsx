@@ -7,6 +7,7 @@ import InternalApi from "../api";
 function SignupForm({ signup }) {
     const history = useNavigate();
     const [formData, setFormData] = useState({
+        username: "",
         email: "",
         password: "",
     });
@@ -29,7 +30,9 @@ function SignupForm({ signup }) {
       console.log('inside login component\'s handleSubmit')
       let result = await signup(formData); //what is signup here
       if (result.success) {
-        history.push("/");
+        console.log('before redirection');
+        history("/");
+        console.log('this should not show up')
       } else {
         setFormErrors(result.errors);
       }
@@ -50,6 +53,16 @@ function SignupForm({ signup }) {
               <div className="card-body">
                 <form onSubmit={handleSubmit}>
                   <div className="form-group">
+                  <label>username</label>
+                    <input
+                        type='text'
+                        name="username"
+                        className="form-control"
+                        value={formData.username}
+                        onChange={handleChange}
+                        autoComplete="username"
+                        required
+                    />
                     <label>email</label>
                     <input
                         type='email'

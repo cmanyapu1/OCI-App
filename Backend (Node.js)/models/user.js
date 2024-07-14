@@ -16,10 +16,11 @@ class User {
     // try to find the user first
     console.log('inside authenticate')
     const result = await db.query(
-          `SELECT email,
+          `SELECT username,
+                  email,
                   password
            FROM users
-           WHERE email = $1`,
+           WHERE email = $2`,
         [email],
     );
 
@@ -40,15 +41,15 @@ class User {
 
 
   static async register(
-    { email, password }) {
+    { username, email, password }) {
 
   const result = await db.query(
         `INSERT INTO users
-         (email, 
+         (username, email, 
           password)
-         VALUES ($1, $2)
-         RETURNING id, email, password`,
-      [
+         VALUES ($1, $2, $3)
+         RETURNING id, username, email, password`,
+      [username,
         email, 
         password],
   );
@@ -58,6 +59,19 @@ class User {
   return user;
 }
 
+static async get(username) {
+
+const result = await db.query(
+      `SELECT * FROM users
+       where username = $1
+       `,
+    [username],
+);
+
+const user = result.rows[0];
+
+return user;
+}
 
 }
 

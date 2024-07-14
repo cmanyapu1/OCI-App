@@ -46,7 +46,7 @@ class InternalApi {
 
   //has to be changed by user
   static async getPassport(passportnum) {
-    let res = await this.request(`/${passportnum}`);
+    let res = await this.request(`${passportnum}`);
     return res;
   }
   
@@ -60,12 +60,12 @@ class InternalApi {
   //has to be changed by user
 
   static async savePasssport(data) {
-    let res = await this.request(`/`, data, "post");
+    let res = await this.request(``, data, "post");
     return res;
   } 
 
   static async getCurrentUser(username) {
-    let res = await this.request(`/${username}`);
+    let res = await this.request(`users/${username}`);
     return res.user;
   }
 
