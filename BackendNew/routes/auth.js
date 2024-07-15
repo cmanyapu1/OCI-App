@@ -9,12 +9,12 @@ const userAuthSchema = require("../schemas/userAuth.json");
 const userRegisterSchema = require("../schemas/userRegister.json");
 const { BadRequestError } = require("../expressError");
 //const { authenticate } = require("../../Backend (Node.js)/models/user");
+const passport = require("passport");
 
 
+router.get("/google", passport.authenticate(`google`, {scope: ['profile', 'email']}));
 
-router.get("/google", authenticate(`google`, {scope: ['profile', 'email']}));
-
-router.get('/google/callback', authenticate('google', { failureRedirect: '/' }),
+router.get('/google/callback', passport.authenticate('google', { failureRedirect: '/' }),
     (req, res) => {
         res.redirect('/');
     }
