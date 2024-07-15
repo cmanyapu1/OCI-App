@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div> 
-      <button onClick = {handlelogic} >Log in</button>
+      <button onClick = {handlelogic} >Sign up / Log in</button>
 </div>
   );
 }
