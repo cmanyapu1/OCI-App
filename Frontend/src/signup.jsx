@@ -63,6 +63,8 @@ function SignupForm({ signup }) {
                         autoComplete="username"
                         required
                     />
+                    </div>
+                     <div className="form-group">
                     <label>email</label>
                     <input
                         type='email'
