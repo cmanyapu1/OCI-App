@@ -18,8 +18,7 @@
     "additionalProperties": false,
     "required": [
       "password",
-      "email",
-      "username"
+      "email"
     ]
   }
   
